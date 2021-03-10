@@ -1,0 +1,137 @@
+[
+    {
+        "model": "TheHopeAppapi.rehab",
+        "pk": 1,
+        "fields":{
+            "name": "The Ranch",
+            "number": "(888)645-7453",
+            "website": "recoveryranch.com",
+            "licensed": true,
+            "treatment_programs": "alcohol, drugs, mental health",
+            "program_length": "45-90 days",
+            "twelve_step": true,
+            "aftercare": true,
+            "dietian": true
+        }
+},
+    {
+        "model": "TheHopeAppapi.rehab",
+        "pk": 2,
+        "fields":{
+            "name": "Journey Pure",
+            "number": "(877) 948-9625",
+            "website": "journeypure.com",
+            "licensed": true,
+            "treatment_programs": "alcohol, drugs, mental health",
+            "program_length": "14-90 days",
+            "twelve_step": true,
+            "aftercare": true,
+            "dietian": true
+        }
+},
+    {
+        "model": "TheHopeAppapi.rehab",
+        "pk": 3,
+        "fields":{
+            "name": "Cumberland Heights",
+            "number": "(866)376-1820",
+            "website": "https://www.cumberlandheights.org/",
+            "licensed": true,
+            "treatment_programs": "alcohol, drugs, mental health",
+            "program_length": "14-90 days",
+            "twelve_step": true,
+            "aftercare": true,
+            "dietian": true
+        }
+},
+    {
+        "model": "TheHopeAppapi.rehab",
+        "pk": 4,
+        "fields":{
+            "name": "Bradford Health Services",
+            "number": "(866)977-7158",
+            "website": "bradfordhealth.com",
+            "licensed": true,
+            "treatment_programs": "alcohol, drugs",
+            "program_length": "14-30 days",
+            "twelve_step": true,
+            "aftercare": true,
+            "dietian": false
+        }
+},
+    {
+        "model": "TheHopeAppapi.rehab",
+        "pk": 5,
+        "fields":{
+            "name": "Recovery Unplugged",
+            "number": "(615)654-7330",
+            "website": "recoveryunplugged.com",
+            "licensed": true,
+            "treatment_programs": "alcohol, drugs",
+            "program_length": "90 days",
+            "twelve_step": false,
+            "aftercare": true,
+            "dietian": true
+        }
+},
+    {
+        "model": "TheHopeAppapi.rehab",
+        "pk": 6,
+        "fields":{
+            "name": "Solutions Retreat",
+            "number": "(615)944-8030",
+            "website": "solutionsretreat.org",
+            "licensed": true,
+            "treatment_programs": "alcohol, drugs",
+            "program_length": "14-120 days",
+            "twelve_step": true,
+            "aftercare": true,
+            "dietian": false
+        }
+},
+    {
+        "model": "TheHopeAppapi.rehab",
+        "pk": 7,
+        "fields":{
+            "name": "AppleGate Recovery",
+            "number": "(615)205-3577",
+            "website": "applegaterecovery.com",
+            "licensed": true,
+            "treatment_programs": "alcohol, mainly opioid addiction",
+            "program_length": "60 days",
+            "twelve_step": true,
+            "aftercare": true,
+            "dietian": false
+        }
+},
+    {
+        "model": "TheHopeAppapi.rehab",
+        "pk": 8,
+        "fields":{
+            "name": "Mending Hearts",
+            "number": "(615)385-1696",
+            "website": "https://mendingheartsinc.org/",
+            "licensed": true,
+            "treatment_programs": "alcohol, drugs",
+            "program_length": "14-45 days",
+            "twelve_step": true,
+            "aftercare": false,
+            "dietian": false
+        }
+},
+    {
+        "model": "TheHopeAppapi.rehab",
+        "pk": 9,
+        "fields":{
+            "name": "Brentwood Springs Detox",
+            "number": "(615)560-7545",
+            "website": "https://brentwoodspringsdetox.com/",
+            "licensed": true,
+            "treatment_programs": "drugs",
+            "program_length": "3-5 days",
+            "twelve_step": false,
+            "aftercare": false,
+            "dietian": false
+        }
+}
+]

@@ -1,0 +1,11 @@
+{
+    "python.pythonPath": "/home/darrensimmons/.local/share/virtualenvs/server-1Ytjh2zz/bin/python",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "The Hope App",
+            "database": "db.sqlite3"
+        }
+    ]
+}

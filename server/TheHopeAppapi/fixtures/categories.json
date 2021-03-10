@@ -1,0 +1,16 @@
+[
+    {
+        "model": "TheHopeAppapi.category",
+        "pk": 1,
+        "fields": {
+            "label": "Al-Anon"
+        }
+    },
+    {
+        "model": "TheHopeAppapi.category",
+        "pk": 2,
+        "fields": {
+            "label": "AA"
+        }
+    }
+]
