@@ -45,3 +45,15 @@ class Contacts(ViewSet):
 
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
+
+    def update(self, request, pk=None):
+
+        contact = Contact.objects.get(pk=pk)
+        contact.name = request.data['name']
+        contact.relationship = request.data['relationship']
+        contact.contact = request.data['contact']
+        contact.user = request.auth.user
+
+        contact.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)

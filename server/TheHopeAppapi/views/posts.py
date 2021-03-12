@@ -56,3 +56,14 @@ class Posts(ViewSet):
         
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
+
+    def update(self, request, pk=None):
+
+        post = Post.objects.get(pk=pk)
+        post.category = Category.objects.get(pk=request.data["categoryId"])
+        post.user = request.auth.user
+        post.content = request.data['content']
+
+        post.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
