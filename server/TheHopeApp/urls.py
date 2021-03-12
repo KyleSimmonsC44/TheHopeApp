@@ -1,3 +1,9 @@
+from TheHopeAppapi.views.rehabs import Rehabs
+from TheHopeAppapi.views.comments import Comments
+from TheHopeAppapi.views.posts import Posts
+from TheHopeAppapi.models.post import Post
+from TheHopeAppapi.views.contacts import Contacts
+from TheHopeAppapi.views.categories import Categories
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
@@ -5,6 +11,11 @@ from rest_framework import routers
 from TheHopeAppapi.views import register_user, login_user
 
 router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'categories', Categories, 'category')
+router.register(r'contacts', Contacts, 'contact')
+router.register(r'posts', Posts, 'post')
+router.register(r'comments', Comments, 'comment')
+router.register(r'rehab', Rehabs, 'rehab')
 
 urlpatterns = [
     path('', include(router.urls)),
