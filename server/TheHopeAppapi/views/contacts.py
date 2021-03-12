@@ -30,3 +30,18 @@ class Contacts(ViewSet):
         serializer = ContactSerializer(contacts, many=True, context={'request': request})
         return Response(serializer.data)
     
+    def create(self, request):
+
+        contact = Contact()
+        contact.name = request.data["name"]
+        contact.relationship = request.data['relationship']
+        contact.contact = request.data['contact']
+        contact.user = request.auth.user
+
+        try:
+            contact.save()
+            serializer = ContactSerializer(contact, context={'request': request})
+            return Response(serializer.data)
+
+        except ValidationError as ex:
+            return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
