@@ -41,4 +41,12 @@ class Comments(ViewSet):
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
+    def update(self, request, pk=None):
 
+        comment= Comment.objects.get(pk=pk)
+        comment.post = Post.objects.get(pk=request.data["postId"])
+        comment.user = request.auth.user
+        comment.content = request.data['content']
+        comment.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
