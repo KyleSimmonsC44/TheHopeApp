@@ -15,10 +15,7 @@ export const NavBar = () => {
                 <Link className="navbar__link" to="/myposts">My Posts</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/categories">Category Management</Link>
-            </li>
-            <li className="navbar__item">
-                <Link className="navbar__link" to="/tags">Tag Management</Link>
+                <Link className="navbar__link" to="/contacts">Contact Management</Link>
             </li>
             {
                 (localStorage.getItem("app_user") !== null) ? //? is similar to an if statement
@@ -26,6 +23,7 @@ export const NavBar = () => {
                         <button className="nav-link fakeLink"
                             onClick={() => {
                                 localStorage.removeItem("app_user")
+                                localStorage.removeItem("categoryId")
                                 history.push({ pathname: "/" })
                             }}
                         >Logout</button>

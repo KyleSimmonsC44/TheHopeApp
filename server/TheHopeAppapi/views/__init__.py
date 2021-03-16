@@ -4,4 +4,5 @@ from .categories import Categories
 from .contacts import Contacts
 from .posts import Posts
 from .comments import Comments
-from .rehabs import Rehabs
+from .rehabs import list_rehabs
+from .rehabs import retrieve_rehab

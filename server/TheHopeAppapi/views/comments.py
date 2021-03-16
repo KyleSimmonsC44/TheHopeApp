@@ -10,7 +10,7 @@ from TheHopeAppapi.models import Comment, Post
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ('id', 'post', 'user', 'content', 'created_on')
+        fields = ('id', 'post', 'content', 'created_on')
         depth=1
 
 class Comments(ViewSet):
@@ -31,7 +31,7 @@ class Comments(ViewSet):
 
         comment = Comment()
         comment.post = Post.objects.get(pk=request.data["postId"])
-        comment.user = request.auth.user
+        comment.user = request.auth
         comment.content = request.data['content']
 
         try:
@@ -45,7 +45,7 @@ class Comments(ViewSet):
 
         comment= Comment.objects.get(pk=pk)
         comment.post = Post.objects.get(pk=request.data["postId"])
-        comment.user = request.auth.user
+        comment.user = request.auth
         comment.content = request.data['content']
         comment.save()
 

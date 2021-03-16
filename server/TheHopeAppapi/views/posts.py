@@ -10,7 +10,8 @@ from TheHopeAppapi.models import Post, Category
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'category', 'user', 'content', 'publication_date')
+        fields = ('id', 'category', 'content', 'publication_date')
+
 
 
 class Posts(ViewSet):
@@ -19,6 +20,8 @@ class Posts(ViewSet):
 
         post = Post.objects.all()
 
+        # logs = Logs.objects.filter(user=request.auth)
+
         user_token = self.request.query_params.get('user_token', None)
 
         category_id = self.request.query_params.get('category_id', None)
@@ -26,7 +29,7 @@ class Posts(ViewSet):
         if category_id is not None:
             post = post.filter(category__id=category_id)
             if user_token is not None:
-                post = post.filter(user=User.objects.get(auth_token=user_token))
+                post = post.filter(user=user_token)
 
 
         serializer = PostSerializer(
@@ -46,7 +49,7 @@ class Posts(ViewSet):
 
         post=Post()
         post.category = Category.objects.get(pk=request.data["categoryId"])
-        post.user = request.auth.user
+        post.user = request.auth
         post.content = request.data['content']
 
         try:
@@ -61,7 +64,7 @@ class Posts(ViewSet):
 
         post = Post.objects.get(pk=pk)
         post.category = Category.objects.get(pk=request.data["categoryId"])
-        post.user = request.auth.user
+        post.user = request.auth
         post.content = request.data['content']
 
         post.save()

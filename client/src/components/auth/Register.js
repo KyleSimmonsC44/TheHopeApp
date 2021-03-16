@@ -84,6 +84,10 @@ export const Register = () => {
             <section className="link--register">
                 Already registered? <Link to="/login">Login</Link>
             </section>
+            <div>
+          Are you in need of immediate help? Please
+          <Link to="/emergency">click here.</Link>
+          </div>
         </main>
     )
 }
