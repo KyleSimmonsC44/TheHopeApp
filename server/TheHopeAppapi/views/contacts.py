@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = ('id', 'name', 'relationship', 'contact', 'user')
+        fields = ('id', 'name', 'relationship', 'contact')
 
 class Contacts(ViewSet):
 
@@ -36,7 +36,7 @@ class Contacts(ViewSet):
         contact.name = request.data["name"]
         contact.relationship = request.data['relationship']
         contact.contact = request.data['contact']
-        contact.user = request.auth.user
+        contact.user = request.auth
 
         try:
             contact.save()
@@ -52,7 +52,7 @@ class Contacts(ViewSet):
         contact.name = request.data['name']
         contact.relationship = request.data['relationship']
         contact.contact = request.data['contact']
-        contact.user = request.auth.user
+        contact.user = request.auth
 
         contact.save()
 

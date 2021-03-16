@@ -3,8 +3,8 @@
         "model": "TheHopeAppapi.comment",
         "pk": 1,
         "fields": {
-            "post": 3,
-            "user": 1,
+            "post": 1,
+            "user": "fa2eba9be8282d595c997ee5cd49f2ed31f65bed",
             "content": "I have an opinion",
             "created_on": "2020-09-28T14:51:39.989Z"
         }
@@ -13,8 +13,8 @@
         "model": "TheHopeAppapi.comment",
         "pk": 2,
         "fields": {
-            "post": 3,
-            "user": 2,
+            "post": 2,
+            "user": "gb3fcb1cf9393e616d118ff6de51g3fe42g76cfe",
             "content": "I'm a Doctor",
             "created_on": "2020-09-2T14:51:39.989Z"
         }
@@ -23,8 +23,8 @@
         "model": "TheHopeAppapi.comment",
         "pk": 3,
         "fields": {
-            "post": 3,
-            "user": 1,
+            "post": 1,
+            "user": "fa2eba9be8282d595c997ee5cd49f2ed31f65bed",
             "content": "I'm still entitled to my opinion",
             "created_on": "2020-09-28T14:51:39.989Z"
         }
@@ -33,8 +33,8 @@
         "model": "TheHopeAppapi.comment",
         "pk": 4,
         "fields": {
-            "post": 3,
-            "user": 2,
+            "post": 2,
+            "user": "gb3fcb1cf9393e616d118ff6de51g3fe42g76cfe",
             "content": "I'm still a Doctor",
             "created_on": "2020-09-28T14:51:39.989Z"
         }
@@ -44,7 +44,7 @@
         "pk": 5,
         "fields": {
             "post": 2,
-            "user": 1,
+            "user": "fa2eba9be8282d595c997ee5cd49f2ed31f65bed",
             "content": "Git 'em!",
             "created_on": "2020-09-28T14:51:39.989Z"
         }

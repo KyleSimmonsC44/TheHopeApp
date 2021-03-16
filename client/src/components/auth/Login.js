@@ -88,6 +88,10 @@ export const Login = () => {
       </section>
       <section className="link--register">
         <Link to="/register">Not a member yet?</Link>
+        <div>
+          Are you in need of immediate help? Please
+          <Link to="/emergency">click here.</Link>
+          </div>
       </section>
     </main>
   );
