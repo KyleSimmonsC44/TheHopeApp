@@ -7,23 +7,23 @@ export const PostProvider = (props) =>{
     const [post, setPost] = useState([])
 
     const getPostsByCategoryId = () =>{
-        return fetch(`http://localhost:8000/posts?category_id=${localStorage.getItem(categoryId)}`,{
+        return fetch(`http://localhost:8000/posts?category_id=${localStorage.getItem("categoryId")}`,{
             headers:{
                 Authorization: `Token ${localStorage.getItem("app_user")}`
             }
-            .then(res => res.json())
-            .then(setPosts)
         })
+        .then(res => res.json())
+        .then(setPosts)
     }
 
     const getPostsByUserToken = () =>{
-        return fetch(`http://localhost:8000/posts?category_id=${localStorage.getItem(categoryId)}&user_token=${localStorage.getItem("app_user")}`,{
+        return fetch(`http://localhost:8000/posts?category_id=${localStorage.getItem("categoryId")}&user_token=${localStorage.getItem("app_user")}`,{
             headers:{
                 Authorization: `Token ${localStorage.getItem("app_user")}`
             }
-            .then(res => res.json())
-            .then(setPosts)
         })
+        .then(res => res.json())
+        .then(setPosts)
     }
 
     const getSinglePost = id =>{
@@ -31,9 +31,9 @@ export const PostProvider = (props) =>{
             headers:{
                 Authorization: `Token ${localStorage.getItem("app_user")}`
             }
-            .then(res => res.json())
-            .then(setPost)
         })
+        .then(res => res.json())
+        .then(setPost)
     }
 
     const addPost = (post) =>{
@@ -62,13 +62,13 @@ export const PostProvider = (props) =>{
     }
 
     const deletePost = (id) => {
-        return fetch(`http://localhost:8088/posts/${id}`, {
+        return fetch(`http://localhost:8000/posts/${id}`, {
             method: "DELETE",
             headers:{
                 Authorization: `Token ${localStorage.getItem("app_user")}`
             }
         })
-            .then(getPosts)
+            .then(getPostsByCategoryId)
     }
 
     return(

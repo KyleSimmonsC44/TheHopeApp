@@ -10,7 +10,7 @@ from TheHopeAppapi.models import Post, Category
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'category', 'content', 'publication_date', 'title')
+        fields = ('id', 'category', 'content', 'publication_date', 'title', 'user')
 
 
 
