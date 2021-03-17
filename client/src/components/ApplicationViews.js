@@ -5,6 +5,9 @@ import { RehabProvider } from "./rehab/RehabProvider";
 import {RehabDetails} from "./rehab/RehabDetail"
 import { CategoryProvider } from "./categories/CategoryProvider";
 import { CategoryList } from "./categories/CategoryList";
+import { ContactProvider } from "./contacts/ContactProvider";
+import { ContactList } from "./contacts/ContactList";
+import { ContactForm } from "./contacts/ContactForm";
 
 export const ApplicationViews = (props) => {
     return (
@@ -22,6 +25,11 @@ export const ApplicationViews = (props) => {
         <CategoryProvider>
           <Route exact path="/category" render={(props)=><CategoryList {...props}/>}/>
         </CategoryProvider>
+        <ContactProvider>
+          <Route exact path="/contacts" render={(props)=><ContactList {...props}/>}/>
+          <Route exact path="/contacts/create" render={(props)=><ContactForm {...props}/>}/>
+          <Route exact path="/contacts/edit/:id(\d+)" render={(props)=><ContactForm {...props}/>}/>
+        </ContactProvider>
         </main>
         </>
         )}

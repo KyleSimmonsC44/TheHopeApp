@@ -16,15 +16,15 @@ class Contacts(ViewSet):
 
     def list(self, request):
 
-        contacts = Contact.objects.all()
+        contacts = Contact.objects.filter(user = request.auth)
 
-        user_token = self.request.query_params.get('user_token', None)
+        # user_token = self.request.query_params.get('user_token', None)
 
-        if user_token is not None:
+        # if user_token is not None:
 
-            logged_user = User.objects.get(auth_token=user_token)
+        #     logged_user = User.objects.get(auth_token=user_token)
 
-            contacts = Contact.objects.filter(user=logged_user)
+        #     contacts = Contact.objects.filter(user=logged_user)
 
 
         serializer = ContactSerializer(contacts, many=True, context={'request': request})
