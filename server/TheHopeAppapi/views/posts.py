@@ -10,7 +10,7 @@ from TheHopeAppapi.models import Post, Category
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'category', 'content', 'publication_date')
+        fields = ('id', 'category', 'content', 'publication_date', 'title', 'user')
 
 
 
@@ -51,6 +51,7 @@ class Posts(ViewSet):
         post.category = Category.objects.get(pk=request.data["categoryId"])
         post.user = request.auth
         post.content = request.data['content']
+        post.title = request.data['title']
 
         try:
             post.save()
@@ -66,6 +67,7 @@ class Posts(ViewSet):
         post.category = Category.objects.get(pk=request.data["categoryId"])
         post.user = request.auth
         post.content = request.data['content']
+        post.title = request.data['title']
 
         post.save()
 
