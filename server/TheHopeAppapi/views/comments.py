@@ -10,7 +10,7 @@ from TheHopeAppapi.models import Comment, Post
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ('id', 'post', 'content', 'created_on')
+        fields = ('id', 'post', 'content', 'created_on', 'user')
         depth=1
 
 class Comments(ViewSet):
