@@ -13,6 +13,8 @@ import { AllPostList } from "./posts/AllPosts";
 import { MyPostList } from "./posts/MyPostList";
 import { PostForm } from "./posts/PostForm";
 import { PostDetails } from "./posts/PostDetail";
+import { CommentProvider } from "./comments/CommentProvider";
+import { CommentList } from "./comments/CommentList";
 
 export const ApplicationViews = (props) => {
     return (
@@ -36,11 +38,19 @@ export const ApplicationViews = (props) => {
           <Route exact path="/contacts/edit/:id(\d+)" render={(props)=><ContactForm {...props}/>}/>
         </ContactProvider>
         <PostProvider>
+          <CommentProvider>
+
         <Route exact path="/posts" render={(props)=><AllPostList {...props}/>}/>
           <Route exact path="/myposts" render={(props)=><MyPostList {...props}/>}/>
           <Route exact path="/posts/edit/:id(\d+)" render={(props)=><PostForm {...props}/>}/>
           <Route exact path="/posts/create" render={(props)=><PostForm {...props}/>}/>
           <Route exact path="/posts/:id(\d+)" render={(props)=><PostDetails {...props}/>}/>
+          <Route
+              exact
+              path="/posts/:id(\d+)"
+              render={(props) => <CommentList {...props} />}
+              />
+              </CommentProvider>
         </PostProvider>
         </main>
         </>
