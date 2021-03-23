@@ -12,8 +12,11 @@ export const RehabList = ({ props }) => {
   }, []);
   console.log(rehabs);
   return (
-    <>
+    <main className="rehabBody">
+
       <div className="emergencyContactInfo">
+        <div className="leftDiv">
+
         If you are in a crisis: <br />
         National Suicide Prevention Lifeline | 1-800-273-TALK (8255) <br />
         Call one of the helplines listed below, or call 911.
@@ -21,8 +24,9 @@ export const RehabList = ({ props }) => {
         National Helpline,
         <br /> SAMHSA’s Treatment Referral and Routing Service, at
         1-800-662-HELP (4357).
-        <br />
-        <br />
+        </div>
+
+        <div className="middleDiv">
         Substance Use Agency Tennessee Department of Mental Health and Substance
         Abuse Services
         <br />
@@ -38,8 +42,9 @@ export const RehabList = ({ props }) => {
         <br />
         Web Site:
         https://www.tn.gov/behavioral-health/substance-abuse-services.html
-        <br />
-        <br />
+        </div>
+
+        <div className="rightDiv">
         Mental Health Agency
         <br />
         Tennessee Department of Mental Health and Substance Abuse Services
@@ -57,18 +62,19 @@ export const RehabList = ({ props }) => {
         Web Site:
         https://www.tn.gov/behavioral-health/mental-health-services.html
         <br />
+        </div>
       </div>
 
-      <h3>Rehabilitation Facilities in Nashville</h3>
+      <h3 className="rehabH3">Rehabilitation Facilities in Nashville</h3>
       <div className="rehabFlex">
         {rehabs.map((r) => {
           return (
-            <Link to={`/rehab/${r.id}`} key={r.id}>
+            <Link className="rehabLink" to={`/rehab/${r.id}`} key={r.id}>
               {r.name}
             </Link>
           );
         })}
       </div>
-    </>
+      </main>
   );
 };

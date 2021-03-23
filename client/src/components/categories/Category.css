@@ -1,0 +1,44 @@
+.categoryBody{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: 300;
+    background: linear-gradient(to left bottom, #e9e9e9, #ebebeb, #d6d6d6, #b1b1b1, #505050);
+}
+
+.categoryFlex{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.categoryButton{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 22px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+    background: radial-gradient(circle, #24cfaa, #26c5a3, #28bb9c, #29b294, #2aa88d);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    min-width: 10em;
+    margin: 10%;
+}
+
+.categoryButton:hover{
+    background: radial-gradient(circle, #2fdbb6, #32d6b3, #32c9a8, #36c7a7, #38bb9f);
+}
+
+.categoryButton:active{
+    background: radial-gradient(circle, #1da88a, #1ea084, #229c82, #23947b, #238d76);
+}
