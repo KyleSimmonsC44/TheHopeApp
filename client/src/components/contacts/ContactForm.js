@@ -1,10 +1,12 @@
-import React, {useContext, useState, useEffect} from "react"
+import React, {useContext, useState, useEffect, useRef} from "react"
+import { useHistory, useParams } from "react-router"
 import {ContactContext} from "./ContactProvider"
 
 export const ContactForm = (props) =>{
     const {addContact, updateContact, contacts, getContacts} = useContext(ContactContext)
-    const chosenContact = props.location.state ? props.location.state.chosenContact : {}
+    const chosenContact = props.location ? props.location.state.chosenContact : {}
 
+    const history = useHistory()
     const [contact, setContact] = useState({
         id: chosenContact.id,
         name: chosenContact.name,
@@ -12,7 +14,9 @@ export const ContactForm = (props) =>{
         contact: chosenContact.contact
     })
 
-    const editMode = props.match.params.hasOwnProperty("id")
+    const params = useParams()
+
+    const editMode = params.hasOwnProperty("id")
     
     const handleControlledInputChange = (event) => {
         const newContact = Object.assign({}, contact)
@@ -23,13 +27,13 @@ export const ContactForm = (props) =>{
     const constructNewContact = () =>{
         if(editMode){
             updateContact(contact)
-            .then(() => props.history.push("/contacts"))
+            
         } else {
             addContact({
                 name: contact.name,
                 relationship: contact.relationship,
                 contact: contact.contact
-            }).then(()=> props.history.push("/contacts"))
+            })
         }
     }
     return (
@@ -75,10 +79,7 @@ export const ContactForm = (props) =>{
           className="btn btn-primary">
           {editMode ? "Submit Contact" : "Save New Contact"}
         </button>
-        <button onClick={() => {
-                    props.history.push(`/contacts`)
-                }}>Back
-                </button>
+        
       </form>
     )
     
