@@ -146,6 +146,13 @@
 .register-button:active{
     background: radial-gradient(circle, #1da88a, #1ea084, #229c82, #23947b, #238d76);
 }
+.signin-button:hover{
+    background: radial-gradient(circle, #2fdbb6, #32d6b3, #32c9a8, #36c7a7, #38bb9f);
+}
+
+.signin-button:active{
+    background: radial-gradient(circle, #1da88a, #1ea084, #229c82, #23947b, #238d76);
+}
 
 .dialog {
     min-width: 15rem;
