@@ -11,6 +11,8 @@ export const RehabList = ({ props }) => {
     getRehabs();
   }, []);
   console.log(rehabs);
+
+  const history = useHistory()
   return (
     <main className="rehabBody">
 
@@ -75,6 +77,7 @@ export const RehabList = ({ props }) => {
           );
         })}
       </div>
+      <button className="rehabBack-button" onClick={()=>{history.push("/login")}}>Back</button>
       </main>
   );
 };

@@ -1,0 +1,90 @@
+dialog{
+    overflow: hidden;
+    border: none;
+}
+
+.modalForm-div{
+    font-weight: 400;
+    color: white;
+}
+
+.contacts-div{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.contact-card{
+    min-width: 325px;
+    border-radius: 10px;
+    background: radial-gradient(circle, #555555, #535353, #505050, #4e4e4e, #4c4c4c);
+    margin: 1%;
+    padding: 2%;
+    font-weight: 400;
+    box-shadow: -8px 16px 16px rgba(0,0,0,0.4);
+}
+
+.contact-button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+    background: radial-gradient(circle, #24cfaa, #26c5a3, #28bb9c, #29b294, #2aa88d);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    min-width: 10em;
+}
+
+.button-box{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact-button:hover{
+    background: radial-gradient(circle, #2fdbb6, #32d6b3, #32c9a8, #36c7a7, #38bb9f);
+}
+
+.contact-button:active{
+    background: radial-gradient(circle, #1da88a, #1ea084, #229c82, #23947b, #238d76);
+}
+
+.form-control{
+    background-color: transparent;
+    border: transparent;
+    width: 100%;
+    color: white;
+}
+
+.centerForm{
+    display: flex;
+    justify-content: center;
+}
+
+.contactForm-button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 22px;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+    background: radial-gradient(circle, #24cfaa, #26c5a3, #28bb9c, #29b294, #2aa88d);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    min-width: 10em;
+    margin: 1%;
+}
+
+.buttonDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.titleh3{
+    text-decoration: underline;
+}

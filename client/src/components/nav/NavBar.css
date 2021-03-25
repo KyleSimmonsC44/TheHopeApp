@@ -1,7 +1,18 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: flex-end;
+    padding-top: 1vh;
+    height: 7vh;
+    background: radial-gradient(circle, #555555, #535353, #505050, #4e4e4e, #4c4c4c);
+    margin: 0 auto;
+    padding-right: 2%;
+}
+
+.navbar:hover{
+    height: 10vh;
+    padding-top: 3vh;
+    transition: .7s;
 }
 
 .navbar__item {
@@ -9,6 +20,34 @@
     list-style-type: none;
 }
 
+.navbar__link:hover{
+    text-decoration: underline;
+    transition: .5s;
+}
+
 .navbar__logo {
-    max-height: 6rem;
+    background-image: url("../../applogo.JPG");
+    width: 30%;
+    height: 100%;
+    background-position: center;
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    padding-bottom: 1%;
+}
+
+li{
+  list-style: none;  
+}
+
+.navbar__link{
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.logoItem{
+    margin-bottom: .5%;
+    margin-top: 0 auto;
 }

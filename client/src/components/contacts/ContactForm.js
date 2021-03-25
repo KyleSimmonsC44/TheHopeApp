@@ -37,50 +37,49 @@ export const ContactForm = (props) =>{
         }
     }
     return (
-        <form className="contactForm">
-        <h2 className="contactForm__title">{editMode ? "Update Contact" : "Add Contact"}</h2>
-        <fieldset>
-          <div className="form-group">
-            <label htmlFor="name">Contact Name: </label>
+      <main className={editMode ? "centerForm" : <></>}>
+
+        <form className={editMode ? "dataForm-div" : "modalForm-div"}>
+        <div className="title">{editMode ? "Update Contact" : "Add Contact"}</div>
+        <div className="fields">
+
+          <div className="username">
             <input type="text" name="name" required autoFocus className="form-control"
               placeholder="Contact name"
               onChange={handleControlledInputChange}
               defaultValue={chosenContact.name}
-            />
+              />
           </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <label htmlFor="relationship">Contact Relationship: </label>
+          <div className="username">
             <input type="text" name="relationship" required autoFocus className="form-control"
               placeholder="Contact Relationship"
               onChange={handleControlledInputChange}
               defaultValue={chosenContact.relationship}
-            />
+              />
           </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <label htmlFor="contact">Contact Information: </label>
+          <div className="username">
             <input type="text" name="contact" required autoFocus className="form-control"
               placeholder="Contact Information"
               onChange={handleControlledInputChange}
               defaultValue={chosenContact.contact}
-            />
+              />
+              </div>
           </div>
-        </fieldset>
        
         
         <button type="submit"
           onClick={evt => {
             evt.preventDefault()
             constructNewContact()
+            history.push("/contacts")
           }}
-          className="btn btn-primary">
+          className="dataForm-button">
           {editMode ? "Submit Contact" : "Save New Contact"}
         </button>
-        
+        {editMode ? <button className="dataForm-button" onClick={()=>{history.push("/contacts")}}>Close Form</button>:<></>}
+
       </form>
+            </main>
     )
     
 }

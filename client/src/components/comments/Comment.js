@@ -1,12 +1,13 @@
 import React, { useContext, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { CommentContext } from "./CommentProvider";
-
+import "./Comment.css"
 export const Comment = ({ comment, props }) => {
   const { deleteComment, editComment, comments } = useContext(CommentContext);
 
   const commentForm = useRef(null);
   const content = useRef(null);
+  const history = useHistory()
 
   const updateComment = () => {
     {
@@ -27,7 +28,7 @@ export const Comment = ({ comment, props }) => {
         { comment.user.key === localStorage.getItem("app_user") ?
         <>
         <button
-          className="btn--release"
+          className="contact-button"
           onClick={() => {
             deleteComment(comment.id);
           }}
@@ -36,6 +37,7 @@ export const Comment = ({ comment, props }) => {
         </button>
 
         <button
+        className="contact-button"
           onClick={() => {
             commentForm.current.showModal();
           }}
@@ -43,13 +45,11 @@ export const Comment = ({ comment, props }) => {
           Edit Comment
         </button>
 
-              <dialog ref={commentForm}>
-          <form className="CommentForm">
+              <dialog className="dataForm-div" ref={commentForm}>
+          <form className="modalForm-div">
             <h2 className="CommentForm__subject">Edit Comment</h2>
-
-            <fieldset>
-              <div className="form-group">
-                <label htmlFor="commentContent">New Comment Content: </label>
+            <div className="fields">
+              <div className="username">
                 <input
                   type="text"
                   id="commentContent"
@@ -59,18 +59,21 @@ export const Comment = ({ comment, props }) => {
                   cols="70"
                   />
               </div>
-            </fieldset>
+              </div>
             <button
+              className="dataForm-button"
               type="submit"
               onClick={(evt) => {
                   evt.preventDefault(); // Prevent browser from submitting the form
                   updateComment(comment.id);
                   commentForm.current.close();
                 }}
-                className="btn btn-primary"
                 >
-              Save New Comment
+                  
+              Save Comment
             </button>
+        <button className="dataForm-button" onClick={()=>{commentForm.current.close();}}>Back</button>
+
           </form>
         </dialog>
 </> : <></>

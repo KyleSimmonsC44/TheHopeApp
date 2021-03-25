@@ -8,6 +8,9 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
 
+            <li className="navbar__item logoItem">
+                <div className="navbar__logo"></div>
+            </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="/posts">Posts</Link>
             </li>
@@ -17,10 +20,13 @@ export const NavBar = () => {
             <li className="navbar__item">
                 <Link className="navbar__link" to="/contacts">Contact Management</Link>
             </li>
+            <li className="navbar__item">
+                <Link className="navbar__link" to="/">Home</Link>
+            </li>
             {
                 (localStorage.getItem("app_user") !== null) ? //? is similar to an if statement
                     <li className="nav-item">
-                        <button className="nav-link fakeLink"
+                        <button className="contact-button"
                             onClick={() => {
                                 localStorage.removeItem("app_user")
                                 localStorage.removeItem("categoryId")

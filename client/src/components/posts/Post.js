@@ -10,13 +10,15 @@ export const Post = ({post, props}) =>{
 
         return(
             <div className="postCard">
-            <h3>Post title : <Link to ={`/posts/${post.id}`}>{post.title}</Link></h3>
-                <button onClick={()=>{
-                deletePost(post.id)
-            }}>
+            <h3>{post.title}</h3>
+            <div className="buttonBox">
+
+                <button className="contact-button" onClick={()=>{
+                    deletePost(post.id)
+                }}>
                 Delete Post
             </button>
-            <button onClick={() =>{
+            <button className="contact-button" onClick={() =>{
                 props.history.push({
                     pathname: `posts/edit/${post.id}`,
                     state:{chosenPost: post}
@@ -24,12 +26,29 @@ export const Post = ({post, props}) =>{
             }}>
                 Edit Post
             </button>
+                </div>
+            <button className="contact-button" onClick={() =>{
+                props.history.push({
+                    pathname: `posts/${post.id}`,
+                    state:{chosenPost: post}
+                })
+            }}>
+                View Post and Comments
+            </button>
             </div>
         )
     }else{
         return(
             <div className="postCard">
-            <h3>Post title : <Link to ={`/posts/${post.id}`}>{post.title}</Link></h3>
+            <h3>{post.title}</h3>
+            <button className="contact-button" onClick={() =>{
+                props.history.push({
+                    pathname: `posts/${post.id}`,
+                    state:{chosenPost: post}
+                })
+            }}>
+                View Post and Comments
+            </button>
             </div>
         )
     }

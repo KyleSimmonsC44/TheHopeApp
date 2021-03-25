@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.landing-image{
+    background-image: url("../../pexels-cottonbro-4101143.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 85vh;
+    margin: 0 auto;
+    color: black;
+    font-size: 34px;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+    padding-top: 12%;
+    line-height: 140%;
+}
+
+.landing-Blurb{
+    color: black;
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: 'Montserrat', cursive;
+    letter-spacing: 1.75px;
+    line-height: 160%;
+    padding: 3%;
+    margin-left: 22%;
+    margin-right: 22%;
+}
+
+.svgResize{
+    display: flex;
+    justify-content: center;
+}
+
+.svgBox{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.svgTextBox{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.svgText{
+    font-weight: 300;
+}
+
+.dedication{
+    margin-top: 5%;
+    font-size: small;
+    line-height: 1rem;
+    letter-spacing: .5px;
+    text-align: center;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+}
+
+.svg-icon{
+    height: 4rem;
+    width: auto;
+}
+
+.blurbText{
+    text-align: center;
+}
+
+.svgTextDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.iconSubText{
+    font-size: 1rem;
+    line-height: 1rem;
+    letter-spacing: .5px;
+    text-align: center;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+}
+
+.far{
+    height: 3rem;
+    width: 3rem;
+}

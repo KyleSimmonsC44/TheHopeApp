@@ -1,5 +1,6 @@
 import React, {useContext, useState, useEffect} from "react"
 import {PostContext} from "./PostProvider"
+import "./PostForm.css"
 
 export const PostForm = (props) =>{
     const {addPost, updatePost, posts, getPosts} = useContext(PostContext)
@@ -35,40 +36,38 @@ export const PostForm = (props) =>{
 
     console.log(props)
     return(
-        <form>
-            <h2 className="tagForm__title">{editMode ? "Edit Post" : "New Post"}</h2>
-            <fieldset>
-          <div className="form-group">
-            <label htmlFor="title">Post Title: </label>
+      <main className="dataFormCSS">
+
+        <form className="dataForm-div">
+          <div className="title">{editMode ? "Edit Post" : "New Post"}</div>
+          <div className="fields">
+          <div className="username">
             <input type="text" name="title" required autoFocus className="form-control"
               placeholder="Post title"
               onChange={handleControlledInputChange}
               value={post.title}
-            />
+              />
           </div>
-        </fieldset>
-            <fieldset>
-          <div className="form-group">
-            <label htmlFor="content">Post Content: </label>
+          <div className="password">
             <textarea type="text" name="content" required autoFocus className="form-control"
               placeholder="Post Content"
               onChange={handleControlledInputChange}
               value={post.content}
-            />
+              />
           </div>
-        </fieldset>
-        <button type="submit"
+        <button  className="dataForm-button"
           onClick={evt => {
             evt.preventDefault()
             constructNewPost()
-          }}
-          className="btn btn-primary">
+          }}>
           {editMode ? "Submit Post" : "Save New Post"}
         </button>
-        <button onClick={() => {
-                    props.history.push(`/posts`)
-                }}>Back
+        <button className="dataForm-button" onClick={() => {
+          props.history.push(`/posts`)
+        }}>Back
                 </button>
+                </div>
         </form>
+        </main>
     )
 }

@@ -1,0 +1,22 @@
+.postDetailCard{
+    min-width: 325px;
+    line-height: 2.1rem;
+    border-radius: 10px;
+    background: radial-gradient(circle, #555555, #535353, #505050, #4e4e4e, #4c4c4c);
+    margin: 1%;
+    margin-top: 6%;
+    padding: 3%;
+    font-weight: 400;
+    box-shadow: -8px 16px 16px rgba(0,0,0,0.4);
+}
+
+.centerCard{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.titleh3{
+    text-decoration: underline;
+}
