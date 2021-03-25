@@ -15,6 +15,7 @@ import { PostForm } from "./posts/PostForm";
 import { PostDetails } from "./posts/PostDetail";
 import { CommentProvider } from "./comments/CommentProvider";
 import { CommentList } from "./comments/CommentList";
+import { LandingPage } from "./LandingPage/LandingPage";
 
 export const ApplicationViews = (props) => {
     return (
@@ -25,6 +26,7 @@ export const ApplicationViews = (props) => {
             lineHeight: "1.75rem",
           }}
         >
+          <Route exact path="/" render={(props)=><LandingPage {...props}/>}/>
         <RehabProvider>
           <Route exact path="/emergency" render={(props)=><RehabList {...props}/>}/>
           <Route exact path="/rehab/:id(\d+)" render={(props) => <RehabDetails {...props}/>}/>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { CommentContext } from "../comments/CommentProvider";
 import { PostContext } from "./PostProvider";
+import "./PostDetail.css"
 
 export const PostDetails = props =>{
   const { getSinglePost, deletePost, post, setPost, posts } = useContext(PostContext);
@@ -29,13 +30,11 @@ export const PostDetails = props =>{
   const commentForm = useRef(null);
   return(
       <>
-            <dialog ref={commentForm}>
+            <dialog className="dataForm-div" ref={commentForm}>
         <form className="CommentForm">
           <h2 className="CommentForm__subject">New Comment</h2>
-
-          <fieldset>
-            <div className="form-group">
-              <label htmlFor="commentContent">Comment Content: </label>
+  
+            <div className="username">
               <input
                 type="text"
                 id="commentContent"
@@ -45,48 +44,54 @@ export const PostDetails = props =>{
                 cols="70"
               />
             </div>
-          </fieldset>
           <button
+
             type="submit"
             onClick={(evt) => {
               evt.preventDefault(); // Prevent browser from submitting the form
               constructNewComment();
               commentForm.current.close();
             }}
-            className="btn btn-primary"
+            className="dataForm-button"
           >
             Save Comment
           </button>
+          <button className="dataForm-button" onClick={()=>{commentForm.current.close();}}>Back</button>
         </form>
       </dialog>
-      <section className="postDetail">
+      <div className="centerCard">
+
+      <section className="postDetailCard">
           <h3 className="post__title">{post.title}</h3>
           <div className="post__title">{post.content}</div>
           <button
+          className="contact-button"
           onClick={() => {
             commentForm.current.showModal();
           }}
-        >
+          >
           Add Comment
         </button>
           {post.user === localStorage.getItem("app_user") ?
-          <>
+          <div className="buttonBox">
           <button
+          className="contact-button"
           onClick={() => {
-              props.history.push(`/posts/edit/${post.id}`);
-            }}
-            >
+            props.history.push(`/posts/edit/${post.id}`);
+          }}
+          >
       Edit Post!
     </button> 
-    <button onClick={() => {
-            deletePost(post.id).then(() => {
-              props.history.push("/posts");
-            });
-          }}
-        >
+    <button className="contact-button" onClick={() => {
+      deletePost(post.id).then(() => {
+        props.history.push("/posts");
+      });
+    }}
+    >
           Delete Post
-        </button></> : <></> }
+        </button></div> : <></> }
         </section>
+          </div>
         </>
   )
 }
